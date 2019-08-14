@@ -1,4 +1,4 @@
-# Valid Phone Number
+# Valid Phone Number [https://www.codewars.com/kata/valid-phone-number/train/java]
 
 Write a function that accepts a string, and returns true if it is in the form of a phone number. 
 Assume that any integer from 0-9 in any of the spots will produce a valid phone number.
