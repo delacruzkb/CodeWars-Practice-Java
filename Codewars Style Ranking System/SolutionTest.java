@@ -50,5 +50,13 @@ public class SolutionTest {
         System.out.println("progress >1 tiers below user");
         user.incProgress(-8);
         assertEquals(11,user.progress);
+        
+        System.out.println("invalid rank range");
+        user.incProgress(-9);
+        assertEquals(11,user.progress);
+        user.incProgress(9999999);
+        assertEquals(11,user.progress);
+        user.incProgress(0);
+        assertEquals(11,user.progress);
     }
 }
