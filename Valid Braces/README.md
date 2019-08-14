@@ -13,7 +13,11 @@ A string of braces is considered valid if all braces are matched with the correc
 Examples:
 
 `"(){}[]"   =>  True`
+
 `"([{}])"   =>  True`
+
 `"(}"       =>  False`
+
 `"[(])"     =>  False`
+
 `"[({})](]" =>  False`
