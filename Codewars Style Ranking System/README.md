@@ -1,36 +1,40 @@
-# Help the Bookseller ! [https://www.codewars.com/kata/54dc6f5a224c26032800005c/train/java]
-A bookseller has lots of books classified in 26 categories labeled A, B, ... Z. 
+# Codewares Style Ranking System [https://www.codewars.com/kata/codewars-style-ranking-system/train/java]
 
-- Each book has a code c of 3, 4, 5 or more capitals letters. 
+Write a class called User that is used to calculate the amount that a user will progress through a ranking system similar to the one Codewars uses.
 
-- The 1st letter of a code is the capital letter of the book category.
+Business Rules:
+- A user starts at rank -8 and can progress all the way to 8.
+- There is no 0 (zero) rank. The next rank after -1 is 1.
+- Users will complete activities. These activities also have ranks.
+- Each time the user completes a ranked activity the users rank progress is updated based off of the activity's rank
+- The progress earned from the completed activity is relative to what the user's current rank is compared to the rank of the activity
+- A user's rank progress starts off at zero, each time the progress reaches 100 the user's rank is upgraded to the next level
+- Any remaining progress earned while in the previous rank will be applied towards the next rank's progress (we don't throw any progress away). The exception is if there is no other rank left to progress towards (Once you reach rank 8 there is no more progression).
+- A user cannot progress beyond rank 8.
+- The only acceptable range of rank values is -8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8. Any other value should raise an error.
 
-- In the bookseller's stocklist each code c is followed by a space and by a positive integer n (int n >= 0) which indicates the quantity of books of this code in stock.
+The progress is scored like so:
+- Completing an activity that is ranked the same as that of the user's will be worth 3 points
+- Completing an activity that is ranked one ranking lower than the user's will be worth 1 point
+- Any activities completed that are ranking 2 levels or more lower than the user's ranking will be ignored
+- Completing an activity ranked higher than the current user's rank will accelerate the rank progression. The greater the difference between rankings the more the progression will be increased. The formula is 10 * d * d where d equals the difference in ranking between the activity and the user.
 
-For example an extract of one of the stocklists could be:
+Logic Examples:
+- If a user ranked -8 completes an activity ranked -7 they will receive 10 progress
+- If a user ranked -8 completes an activity ranked -6 they will receive 40 progress
+- If a user ranked -8 completes an activity ranked -5 they will receive 90 progress
+- If a user ranked -8 completes an activity ranked -4 they will receive 160 progress, resulting in the user being upgraded to rank -7 and having earned 60 progress towards their next rank
+- If a user ranked -1 completes an activity ranked 1 they will receive 10 progress (remember, zero rank is ignored)
 
-`L = {"ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"}.`
+Code Usage Examples:
+User user = new User();
+user.rank; // => -8
+user.progress; // => 0
+user.incProgress(-7);
+user.progress; // => 10
+user.incProgress(-5); // will add 90 progress
+user.progress; // => 0 // progress is now zero
+user.rank; // => -7 // rank was upgraded to -7
+Note: In Java some methods may throw an IllegalArgumentException.
 
-or
-
-`L = ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"]`
-
-You will be given a stocklist (e.g. : L) and a list of categories in capital letters e.g :
-
-`M = {"A", "B", "C", "W"}`
-
-or
-
-`M = ["A", "B", "C", "W"]`
-
-and your task is to find all the books of L with codes belonging to each category of M and to sum their quantity according to each category.
-
-For the lists L and M of example you have to return the string (in Haskell/Clojure/Racket a list of pairs):
-
-`(A : 20) - (B : 114) - (C : 50) - (W : 0)`
-
-where A, B, C, W are the categories, 20 is the sum of the unique book of category A, 114 the sum corresponding to "BKWRK" and "BTSQZ", 50 corresponding to "CDXEF" and 0 to category 'W' since there are no code beginning with W.
-
-If L or M are empty return string is `""` (Clojure and Racket should return an empty array/list instead).
-
-Note: In the result codes and their values are in the same order as in M.
+Note: Codewars no longer uses this algorithm for its own ranking system. It uses a pure Math based solution that gives consistent results no matter what order a set of ranked activities are completed at.
