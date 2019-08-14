@@ -1,4 +1,4 @@
-# Rectangles into Squares
+# Rectangles into Squares [https://www.codewars.com/kata/55466989aeecab5aac00003e]
 
 The drawing below gives an idea of how to cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different).
 
