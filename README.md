@@ -4,7 +4,9 @@
 A place where I post my solutions to the various training challenges that codewars produces.
 
 ## What is CodeWars:
-A place to train in a programming language by writing code to a presented situation/problem.
+A place to train in a selected programming language by writing code to a presented situation/problem.
+CodeWars then runs your code through various tests they made before hand.
+Each Kata has different difficulties, so each problem has its own intricacies.
 
 ## CodeWars Definitions
 - Kata : Real code challenges focused on improving skill and technique. Some train programming fundamentals, while others focus on complex problem solving. Each kata is crafted for and by the community.
