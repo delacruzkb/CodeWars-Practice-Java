@@ -2,7 +2,7 @@
 
 The drawing below gives an idea of how to cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different).
 
-![Alt text][https://i.imgur.com/lk5vJ7sm.jpg]
+![Alt text](https://i.imgur.com/lk5vJ7sm.jpg)
 
 Can you translate this drawing into an algorithm?
 
