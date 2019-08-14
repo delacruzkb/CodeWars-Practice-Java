@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 class RevRot 
 {
     public static String revRot(String strng, int sz) 
