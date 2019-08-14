@@ -49,11 +49,15 @@ public class User
           rank++;
         }
         progress -=100;
+        if(rank==8)
+        {
+          progress =0;
+        }
       }
     }
     else
     {
-      throw new IllegalArgumentException("Must be between -8 and 8, but not 0);
+      throw new IllegalArgumentException();
     }
   }
   
