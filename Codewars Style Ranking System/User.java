@@ -11,7 +11,7 @@ public class User
   }
   public void incProgress(int activityRank)
   {
-    if(isRank(activityRank))
+    if(isRank(activityRank) && rank !=8)
     {
       if(activityRank == rank)
       {
@@ -50,6 +50,10 @@ public class User
         }
         progress -=100;
       }
+    }
+    else
+    {
+      throw new IllegalArgumentException("Must be between -8 and 8, but not 0);
     }
   }
   
