@@ -3,6 +3,8 @@
 ## What is this repo:
 A place where I post my solutions to the various training challenges that CodeWars has to offer with the hopes to display my current level of programming proficiency.
 
+Note: These are all my first successful completion, no further optimization occurs.
+
 ## What is CodeWars:
 A place to train in a selected programming language by writing code to a presented situation/problem.
 CodeWars then runs your code through various tests they made before hand.
