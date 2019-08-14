@@ -7,46 +7,59 @@ public class User
   public User()
   {
     rank = -8;
-    progress=0;
+    progress= 0;
   }
   public void incProgress(int activityRank)
   {
-    if(activityRank == rank)
+    if(isRank(activityRank))
     {
-      progress +=3;
-    }
-    else if(activityRank< rank)
-    {
-      if( (rank == 1 && activityRank == -1) || (rank-1 == activityRank))
+      if(activityRank == rank)
       {
-        progress +=1;
+        progress +=3;
       }
-    }
-    else if(activityRank > rank)
-    {
-      int difference=0;
-      if(activityRank >0 && 0>rank)
+      else if(activityRank< rank)
       {
-        difference = activityRank - rank -1;
+        if( (rank == 1 && activityRank == -1) || (rank-1 == activityRank))
+        {
+          progress +=1;
+        }
       }
-      else
+      else if(activityRank > rank)
       {
-        difference = activityRank - rank;
+        int difference=0;
+        if(activityRank >0 && 0>rank)
+        {
+          difference = activityRank - rank -1;
+        }
+        else
+        {
+          difference = activityRank - rank;
+        }
+        progress += 10 * difference * difference;
       }
-      progress += 10 * difference * difference;
-    }
     
-    while(progress >=100)
-    {
-      if(rank == -1)
+      while(progress >=100)
       {
-        rank += 2;
+        if(rank == -1)
+        {
+          rank += 2;
+        }
+        else
+        {
+          rank++;
+        }
+        progress -=100;
       }
-      else
-      {
-        rank++;
-      }
-      progress -=100;
     }
+  }
+  
+  private boolean isRank(int rank)
+  {
+    boolean rtnval = true;
+    if( rank >8 || rank<-8 || rank == 0)
+    {
+      rtnval=false;
+    }
+    return rtnval;
   }
 }
