@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.runners.JUnit4;
 
 // TODO: Replace examples and use TDD development by writing your own tests
@@ -52,11 +53,32 @@ public class SolutionTest {
         assertEquals(11,user.progress);
         
         System.out.println("invalid rank range");
-        user.incProgress(-9);
-        assertEquals(11,user.progress);
-        user.incProgress(9999999);
-        assertEquals(11,user.progress);
-        user.incProgress(0);
-        assertEquals(11,user.progress);
+        try
+        {
+          user.incProgress(-9);
+          fail();
+        }
+        catch(Exception e)
+        {
+          //pass
+        }
+        try
+        {
+          user.incProgress(9);
+          fail();
+        }
+        catch(Exception e)
+        {
+          //pass
+        }
+        try
+        {
+          user.incProgress(0);
+          fail();
+        }
+        catch(Exception e)
+        {
+          //pass
+        }
     }
 }
