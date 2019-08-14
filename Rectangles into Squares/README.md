@@ -27,6 +27,6 @@ You will return an array or a string (depending on the language; Shell bash, Pow
 
 - return {} with C++, Array() with Scala.
 
--In that case the returned structure of C will have its sz component equal to 0.
+- In that case the returned structure of C will have its sz component equal to 0.
 
 - Return the string "nil" with Bash, PowerShell and Fortran.
