@@ -1,4 +1,4 @@
-# Codewares Style Ranking System [https://www.codewars.com/kata/codewars-style-ranking-system/train/java]
+# Codewares Style Ranking System (Currently incomplete) [https://www.codewars.com/kata/codewars-style-ranking-system/train/java]
 
 Write a class called User that is used to calculate the amount that a user will progress through a ranking system similar to the one Codewars uses.
 
