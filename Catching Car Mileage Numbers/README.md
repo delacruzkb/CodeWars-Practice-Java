@@ -1,4 +1,4 @@
-# Permutations [https://www.codewars.com/kata/catching-car-mileage-numbers/train/java]
+# Catching Car Mileage Numbers [https://www.codewars.com/kata/catching-car-mileage-numbers/train/java]
 
 > "7777...8?!??!", exclaimed Bob, "I missed it again! Argh!" 
 Every time there's an interesting number coming up, he notices and then promptly forgets. 
